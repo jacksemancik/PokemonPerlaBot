@@ -1,5 +1,5 @@
 import sys
-from perlabot import perla
+from views import perla
 
 number_of_minutes = float(sys.argv[1])
 try:
