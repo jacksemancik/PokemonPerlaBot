@@ -1,6 +1,7 @@
 # PokemonPerlaBot
-A Bot Programmed to Play Pokemon Perla. At this current stage, the bot simply walks from left to right. Neither the save function nor the switch function currently work. Currently works well for grinding only. Written in Python.
+A Bot Programmed to Play Pokemon Perla. At this current stage, the bot saves the game, and walks the player from left to right, pressing the A Button before and after each walk-cycle. If the switch-variable is set to `True`, then the bot switches the positions of the first and second Pokémon in the party. Currently, PerlaBot works well for grinding. Written in Python.
 
+It should also be noted that PerlaBot has a "failsafe" method programmed in; if you move your mouse to the upper-left corner of your computer screen, the programme will automatically stop.
 ## Dependencies
 PerlaBot requires [PyAutoGUI](https://github.com/asweigart/pyautogui), which can be installed using pip:
 ```
