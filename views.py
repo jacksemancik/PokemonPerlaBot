@@ -1,80 +1,107 @@
 import pyautogui, sys, time
 
+def keypress(key):
+	pyautogui.keyDown(key)
+	time.sleep(.5)
+	pyautogui.keyUp(key)
+
 def save():
-	time.sleep(1)
-	pyautogui.press('enter')
-	time.sleep(3)
-	pyautogui.press('up')
-	time.sleep(3)
-	pyautogui.press('up')
-	time.sleep(3)
-	pyautogui.press('up')
-	time.sleep(3)
-	pyautogui.press('x')
-	time.sleep(5)
-	pyautogui.press('x')
-	time.sleep(5)
-	pyautogui.press('x')
-	time.sleep(5)
-	pyautogui.press('x')#spams x to assure that the saving process screens have ended
-	time.sleep(3)
-	pyautogui.press('x')
-	time.sleep(3)
-	pyautogui.press('x')
-	time.sleep(3)
-	pyautogui.press('x')
-	time.sleep(3)
-	pyautogui.press('x')
-	time.sleep(3)
-	pyautogui.press('x')
-	time.sleep(3)
-	pyautogui.press('x')
-	time.sleep(3)
-	pyautogui.press('x')
-	time.sleep(3)
-	pyautogui.press('x')
-	time.sleep(3)
-	pyautogui.press('x')
-	time.sleep(3)
-	pyautogui.press('x')
-	time.sleep(3)
-	pyautogui.press('x')
-	time.sleep(3)
-	pyautogui.press('x')
-	time.sleep(3)
-	pyautogui.press('enter')#resets menu cursor
-	time.sleep(3)
-	pyautogui.press('down')#resets menu cursor
-	time.sleep(3)
-	pyautogui.press('down')#resets menu cursor
-	time.sleep(3)
-	pyautogui.press('down')#resets menu cursor
+	keypress('enter')
+	
+	keypress('up')
+	
+	keypress('up')
+	
+	keypress('up')
+	
+	keypress('x')
+	
+	keypress('x')
+	
+	keypress('x')
+	
+	keypress('x')#spams x to assure that the saving process screens have ended
+	keypress('x')
+	
+	keypress('x')
+	
+	keypress('x')
+	
+	keypress('x')
+	
+	keypress('x')
+	
+	keypress('x')
+	
+	keypress('x')
+	
+	keypress('x')
+	
+	keypress('x')
+	
+	keypress('x')
+	
+	keypress('x')
+	
+	keypress('x')
+	
+	keypress('enter')#resets menu cursor
+	
+	keypress('down')#resets menu cursor
+	
+	keypress('down')#resets menu cursor
+	
+	keypress('down')#resets menu cursor
+
+	keypress('enter')
 	print('Game saved!')
 	print('(Unless, of course, you were in a battle. Oops!)')
 	return
 
 def perla(maxmin, wait, swi):
+	pyautogui.FAILSAFE = True
 	if wait:
 		wait_time = wait * 60
 		time.sleep(wait_time)
-	if (swi == 'switch'):
+	if (swi == True):
 		switchpos()
 	save()
 	red = 1
 	endtime = time.time() + 60 * maxmin
+	pyautogui.PAUSE = .5
 	while time.time() < endtime:
-		pyautogui.press(['right','right','right','left','left','left','x'])
+		keypress('x')
+		keypress('right')
+		keypress('right')
+		keypress('right')
+		keypress('left')
+		keypress('left')
+		keypress('left')
+		keypress('x')
 		print('Performed task %s times!' % red)
 		red += 1
 	save()
 	return
 
 def switchpos():
-	pyautogui.press(['enter','down','x'])
-	time.sleep(5)
-	pyautogui.press(['x','down','x','left','x','z'])
-	time.sleep(5)
-	pyautogui.press(['up','enter'])
+	#pyautogui.PAUSE = 1.5
+	keypress('enter')
+	keypress('down')
+	keypress('x')
+	time.sleep(2)
+	keypress('x')
+	time.sleep(1)
+	keypress('down')
+	time.sleep(2)
+	keypress('x')
+	keypress('right')
+	keypress('right')
+	keypress('x')
+	time.sleep(2)
+	keypress('z')
+	time.sleep(2)
+	keypress('up')
+	keypress('enter')
 	print('Positions switched!')
 	return
 	
