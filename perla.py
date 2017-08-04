@@ -8,20 +8,27 @@ try:
 	wait_minutes = float(sys.argv[2])
 except:
 	try:
-		switch = bool(sys.argv[2])
+		switch = str(sys.argv[2])
 	except:
 		switch = False
+	else:
+		if switch == "True" or switch == "true" or switch == "Switch" or switch == "switch":
+			switch = True
+		else:
+			switch = False
 
 	wait_minutes = 1
 else:
 	try:
-		switch = bool(sys.argv[3])
+		switch = str(sys.argv[3])
 	except:
 		switch = False
+	else:
+		if switch == "True" or switch == "true" or switch == "switch" or switch == "Switch":
+			switch = True
+		else:
+			switch = False
 
 
 
 perla(number_of_minutes, wait_minutes, switch)
-
-
-
