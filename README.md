@@ -28,16 +28,16 @@ PerlaBot may be activated as following:
 ```
 python perla.py maxRunTime WaitTime SwitchVariable
 ```
-(NOTE: the time units are in minutes, while the switch variable is a boolean value)
+(NOTE: the `maxRunTime` and `WaitTime` variables are in minutes, while the `SwitchVariable` is a boolean value)
 
 ## Example
 ```
 python perla.py 20 1 True
 ```
-In this example, the bot runs for 20 minutes after a one minute waiting period. Additionally, because the switch variable is set to True, the first and second Pokemon in your party are switched.
+In this example, the bot runs for 20 minutes after a one minute waiting period. Additionally, because the switch variable is set to `True`, the first and second Pokemon in your party are switched.
 
 ## Contribute!
-If you would like to contribute to this project, clone the repository and start pushing! Any help is greatly appreciated.
+If you would like to contribute to this project, clone the repository and start making pull requests! I'll review them from there. Any help is greatly appreciated!
 ```
 git clone https://github.com/jacksemancik/PokemonPerlaBot.git
 ```
