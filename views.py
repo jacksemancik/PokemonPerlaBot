@@ -1,4 +1,5 @@
 import pyautogui, sys, time
+from return_color import color_from_mouse
 
 def keypress(key):
 	pyautogui.keyDown(key)
@@ -7,55 +8,31 @@ def keypress(key):
 
 def save():
 	keypress('enter')
-	
 	keypress('up')
-	
 	keypress('up')
-	
 	keypress('up')
-	
 	keypress('x')
-	
 	keypress('x')
-	
 	keypress('x')
-	
 	keypress('x')#spams x to assure that the saving process screens have ended
 	keypress('x')
-	
 	keypress('x')
-	
 	keypress('x')
-	
 	keypress('x')
-	
 	keypress('x')
-	
 	keypress('x')
-	
 	keypress('x')
-	
 	keypress('x')
-	
 	keypress('x')
-	
 	keypress('x')
-	
 	keypress('x')
-	
 	keypress('x')
-	
 	keypress('enter')#resets menu cursor
-	
 	keypress('down')#resets menu cursor
-	
 	keypress('down')#resets menu cursor
-	
 	keypress('down')#resets menu cursor
-
 	keypress('enter')
 	print('Game saved!')
-	print('(Unless, of course, you were in a battle. Oops!)')
 	return
 
 def perla(maxmin, wait, swi):
@@ -70,16 +47,17 @@ def perla(maxmin, wait, swi):
 	endtime = time.time() + 60 * maxmin
 	pyautogui.PAUSE = .5
 	while time.time() < endtime:
-		keypress('x')
-		keypress('right')
-		keypress('right')
-		keypress('right')
-		keypress('left')
-		keypress('left')
-		keypress('left')
-		keypress('x')
+		standard_color = (206, 170, 99)
+		if (color_from_mouse() == standard_color):
+			keypress('right')
+			keypress('left')
+		else:
+			keypress('x')
+			keypress('x')
 		print('Performed task %s times!' % red)
 		red += 1
+	while not color_from_mouse() == standard_color:
+		keypress('x')
 	save()
 	return
 
