@@ -55,19 +55,17 @@ python perla.py [-h] [-w WAIT] [-s] N
 ```
 **positional arguments:**
 
+Argument(s) | Description
 --- | ---
-
-  N | The amount of time (in minutes) that perla runs for
+N | The amount of time (in minutes) that perla runs for
 
 **optional arguments:**
 
+Argument(s) | Description
 --- | ---
-
-  -h, --help | show this help message and exit
-
-  -w WAIT, --wait WAIT | The amount of time (in minutes) that perla waits before running (defaults to one minute, if no input)
-
-  -s, --switch | Switches the first and second Pokemon in your party
+-h, --help | show help message and exit
+-w WAIT, --wait WAIT | The amount of time (in minutes) that perla waits before running (defaults to one minute, if no input)
+-s, --switch | Switches the first and second Pokemon in your party
 
 
 ## Example
