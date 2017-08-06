@@ -53,17 +53,19 @@ PerlaBot may be activated by invoking the following:
 ```
 python perla.py [-h] [-w WAIT] [-s] N
 ```
-positional arguments:
+**positional arguments:**
+--- | ---
 
-  N                     The amount of time (in minutes) that perla runs for
+  N | The amount of time (in minutes) that perla runs for
 
-optional arguments:
+**optional arguments:**
+--- | ---
 
-  -h, --help            show this help message and exit
+  -h, --help | show this help message and exit
 
-  -w WAIT, --wait WAIT  The amount of time (in minutes) that perla waits before running (defaults to one minute, if no input)
+  -w WAIT, --wait WAIT | The amount of time (in minutes) that perla waits before running (defaults to one minute, if no input)
 
-  -s, --switch          Switches the first and second Pokemon in your party
+  -s, --switch | Switches the first and second Pokemon in your party
 
 
 ## Example
