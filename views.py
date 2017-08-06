@@ -1,5 +1,5 @@
-import pyautogui, sys, time
-from return_color import color_from_mouse
+import pyautogui, time
+from color import color_from_mouse
 
 def keypress(key):
 	pyautogui.keyDown(key)
@@ -46,18 +46,34 @@ def perla(maxmin, wait, swi):
 	red = 1
 	endtime = time.time() + 60 * maxmin
 	pyautogui.PAUSE = .5
+	standard_color = (206, 170, 99)
+	move_changes = 0
 	while time.time() < endtime:
-		standard_color = (206, 170, 99)
-		if (color_from_mouse() == standard_color):
+		while color_from_mouse() == standard_color:
 			keypress('right')
 			keypress('left')
-		else:
-			keypress('x')
-			keypress('x')
-		print('Performed task %s times!' % red)
-		red += 1
+			print('Performed task %s times!' % red)
+			red += 1
+		limit = time.time() + 180
+		while not color_from_mouse() == standard_color:
+			if time.time() < limit:
+				keypress('x')
+				keypress('x')
+				print('Performed task %s times!' % red)
+				red += 1
+			else:
+				move_changes = exit_battle(move_changes)
+				print('Performed task %s times!' % red)
+				red += 1
+
+
+
+	limit = time.time() + 180
+	move_changes = 5				
 	while not color_from_mouse() == standard_color:
 		keypress('x')
+		if time.time() > limit:
+			move_changes = exit_battle(move_changes)
 	save()
 	return
 
@@ -82,7 +98,57 @@ def switchpos():
 	keypress('enter')
 	print('Positions switched!')
 	return
-	
 
+def exit_battle(move_changes):
+	keypress('z')
+	keypress('z')
+	keypress('z')
+	keypress('z')
+	keypress('down')
+	keypress('right')
+	keypress('x')
+	keypress('x')
+	keypress('x')
+	keypress('x')
+	keypress('x')
+	return switch_move(move_changes)
+
+def switch_move(move_changes):
+	move_changes += 1
+	diff = 3 - move_changes
+	keypress('enter')
+	keypress('down')
+	keypress('x')
+	time.sleep(2)
+	keypress('x')
+	time.sleep(1)
+	keypress('x')
+	time.sleep(2.5)
+	keypress('right')
+	time.sleep(1)
+	keypress('right')
+	time.sleep(2)
+	keypress('x')
+	time.sleep(1)
+	keypress('x')
+	for x in range(0,move_changes):
+		keypress('down')
+		time.sleep(1)
+	keypress('x')
+	time.sleep(1)
+	keypress('x')
+	for x in range(0,diff):
+		keypress('down')
+		time.sleep(1)
+	keypress('x')
+	keypress('z')
+	keypress('z')
+	time.sleep(1)
+	keypress('z')
+	keypress('z')
+	time.sleep(2)
+	keypress('up')
+	keypress('enter')
+	return move_changes
 		
 	
