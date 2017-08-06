@@ -54,11 +54,13 @@ PerlaBot may be activated by invoking the following:
 python perla.py [-h] [-w WAIT] [-s] N
 ```
 **positional arguments:**
+Argument(s) | Description
 --- | ---
 
   N | The amount of time (in minutes) that perla runs for
 
 **optional arguments:**
+Argument(s) | Description
 --- | ---
 
   -h, --help | show this help message and exit
