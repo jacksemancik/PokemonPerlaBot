@@ -72,9 +72,9 @@ Argument(s) | Description
 
 ## Example
 ```
-python perla.py 20 -w 2 -s
+python perla.py 20 -w 2 -s -g ChaosBlack -x Female
 ```
-In this example, the bot runs for 20 minutes after a two minute waiting period. Additionally, because the switch tag is set, the first and second Pokemon in your party are switched.
+In this example, the bot runs for 20 minutes after a two minute waiting period. The game is set to ChaosBlack and the in-game character's gender is female. Additionally, because the switch tag is set, the first and second Pokemon in your party are switched.
 
 ## Contribute!
 If you would like to contribute to this project, clone the repository and start making pull requests! I'll review them from there. Any help is greatly appreciated!
