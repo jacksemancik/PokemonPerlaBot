@@ -51,21 +51,23 @@ Right key | Right
 ## Usage
 PerlaBot may be activated by invoking the following:
 ```
-python perla.py [-h] [-w WAIT] [-s] N
+python perla.py [-h] [-w WAIT] [-s] [-g GAME] N -x SEX
 ```
 **positional arguments:**
 
 Argument(s) | Description
 --- | ---
-N | The amount of time (in minutes) that perla runs for
+N | amount of time (in minutes) that perla runs for
+-x SEX, --sex SEX | gender of the in-game character (either Male or Female)
 
 **optional arguments:**
 
 Argument(s) | Description
 --- | ---
 -h, --help | show help message and exit
--w WAIT, --wait WAIT | The amount of time (in minutes) that perla waits before running (defaults to one minute, if no input)
--s, --switch | Switches the first and second Pokemon in your party
+-w WAIT, --wait WAIT | amount of time (in minutes) that perla waits before running (defaults to one minute, if no input)
+-s, --switch | switch the first and second Pokemon in your party
+-g GAME, --game GAME | game version for which you want to use PerlaBot (either Sapphire, Ruby, Emerald, Perla, FireRed, LeafGreen, or ChaosBlack; default is Perla)
 
 
 ## Example
