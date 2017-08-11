@@ -35,7 +35,7 @@ def save():
 	print('Game saved!')
 	return
 
-def perla(maxmin, wait, swi):
+def perla(maxmin, wait, swi, ver, gen):
 	pyautogui.FAILSAFE = True
 	if wait:
 		wait_time = wait * 60
@@ -46,7 +46,8 @@ def perla(maxmin, wait, swi):
 	red = 1
 	endtime = time.time() + 60 * maxmin
 	pyautogui.PAUSE = .5
-	standard_color = (206, 170, 99)
+	standard_color = game_color(ver,gen)
+#Perla male standard color: (206, 170, 99)
 	move_changes = 0
 	while time.time() < endtime:
 		while color_from_mouse() == standard_color:
@@ -152,5 +153,27 @@ def switch_move(move_changes):
 		keypress('up')
 		keypress('enter')
 	return move_changes
+
+def game_color(v,g):
+	if v == 'Chaos' or v == 'Fire' or v == 'Leaf':
+		if g == 'Female':
+			return (239, 235, 255)
+		else:
+			return (255, 105, 74)
+	elif v == 'Emerald':
+		if g == 'Female':#Must place mouse cursor over hair not over hat!!
+			return (165, 105, 82)
+		else:#Must place cursor over hair not headband!!
+			return (252, 248, 253)
+	elif v == 'Sapphire' or v == 'Ruby':
+		if g == 'Female':
+			return (165, 105, 82)#Placeholder, may not be accurate
+		else:
+			return (252, 248, 253)#Placeholder, may not be accurate
+	elif v == 'Perla':
+		return (206, 170, 99)#Same color for both characters, oddly enough
+	
+		
+			
 		
 	
