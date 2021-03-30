@@ -4,9 +4,9 @@ class Sanitise(object):
 		for each in args:
 			arb += each
 		arb = arb.lower()
-		if arb == 'male' or arb == 'boy' or arb =='man':
+		if arb == 'male' or arb == 'boy' or arb =='man' or arb == 'm':
 			return 'Male'
-		elif arb == 'female' or arb == 'girl' or arb == 'woman':
+		elif arb == 'female' or arb == 'girl' or arb == 'woman' or arb == 'f':
 			return 'Female'
 		else:
 			raise ValueError
